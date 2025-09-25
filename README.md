@@ -33,7 +33,15 @@ venv\\Scripts\\activate   # Windows
 pip install -r requirements.txt
 ```
 
-### 4. 環境変数の設定
+### 4. 設定ファイルの作成
+設定テンプレートをコピーして個人用設定ファイルを作成：
+```bash
+cp config.template.py config.py  # Linux/Mac
+# または
+copy config.template.py config.py  # Windows
+```
+
+### 5. 環境変数の設定
 `.env.template`をコピーして`.env`ファイルを作成：
 ```bash
 cp .env.template .env
@@ -64,7 +72,7 @@ SAVE_FOLDER=./downloads
 ## 使用方法
 
 ### 1. 設定の変更
-`save_samples.py`の`CONFIG`辞書を編集：
+`config.py`ファイルの`CONFIG`辞書を編集：
 
 ```python
 CONFIG = {
@@ -118,6 +126,8 @@ python save_samples.py
 ```
 image-downloader/
 ├── save_samples.py      # メインスクリプト
+├── config.py            # 個人設定（Gitで管理されません）
+├── config.template.py   # 設定テンプレート
 ├── .env                 # 環境変数（Gitで管理されません）
 ├── .env.template        # 環境変数のテンプレート
 ├── requirements.txt     # 必要なPythonパッケージ
@@ -148,6 +158,12 @@ image-downloader/
 - 大量のダウンロードは控えめに行ってください
 
 ## トラブルシューティング
+
+### 設定ファイルエラー
+```
+❌ エラー: config.py ファイルが見つかりません
+```
+→ `config.template.py`を`config.py`にコピーしてから実行してください
 
 ### APIキーエラー
 ```

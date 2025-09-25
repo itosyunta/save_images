@@ -55,6 +55,9 @@ ENV/
 # Environment variables
 .env
 
+# User configuration
+config.py
+
 # IDE
 .vscode/
 .idea/
