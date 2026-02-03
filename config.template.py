@@ -7,6 +7,11 @@ CONFIG = {
     
     # 検索キーワード
     "query": "cats",
+
+    # 保存先フォルダ（検索キーワードごとのサブフォルダが作成されます）
+    # 例: "./downloads"
+    # Windows例: r"H:\\path\\to\\folder" または r"H:\path\to\folder"
+    "save_folder": "./downloads",
     
     # ダウンロードする画像数
     "n": 20,

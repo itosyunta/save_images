@@ -54,9 +54,6 @@ PIXABAY_API_KEY=your_pixabay_api_key_here
 
 # Pexels API Key (https://www.pexels.com/api/)
 PEXELS_API_KEY=your_pexels_api_key_here
-
-# 保存先フォルダ
-SAVE_FOLDER=./downloads
 ```
 
 ## APIキーの取得
@@ -78,6 +75,7 @@ SAVE_FOLDER=./downloads
 CONFIG = {
     "provider": "pixabay",     # "pixabay" または "pexels"
     "query": "cats",           # 検索キーワード
+    "save_folder": "./downloads",  # 保存先フォルダ（クエリごとにサブフォルダ作成）
     "n": 20,                   # ダウンロード枚数
     "min_width": 1024,         # 最小幅（Pixabayのみ）
     "min_height": 768,         # 最小高さ（Pixabayのみ）

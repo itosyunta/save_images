@@ -202,9 +202,13 @@ def main():
     min_width = CONFIG["min_width"]
     min_height = CONFIG["min_height"]
     delay = CONFIG["delay"]
-    
-    # .envファイルから保存先フォルダを取得
-    base_folder = os.getenv("SAVE_FOLDER", "./samples")
+
+    # 保存先フォルダは config.py を優先（後方互換のため .env の SAVE_FOLDER も参照）
+    base_folder = (
+        CONFIG.get("save_folder")
+        or os.getenv("SAVE_FOLDER")
+        or "./downloads"
+    )
     
     # クエリ用のサブフォルダを作成
     query_folder = sanitize_folder_name(query)
